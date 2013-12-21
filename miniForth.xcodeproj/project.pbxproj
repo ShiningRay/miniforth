@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C4757A731865D1B800881F70 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C4757A721865D1B800881F70 /* main.c */; };
 		C4757A751865D1B800881F70 /* miniForth.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C4757A741865D1B800881F70 /* miniForth.1 */; };
+		C4757A821866172100881F70 /* word.c in Sources */ = {isa = PBXBuildFile; fileRef = C4757A7F18660C4400881F70 /* word.c */; };
+		C4757A831866172400881F70 /* stack.c in Sources */ = {isa = PBXBuildFile; fileRef = C4757A7C18660B5800881F70 /* stack.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,11 @@
 		C4757A6F1865D1B800881F70 /* miniForth */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = miniForth; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4757A721865D1B800881F70 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C4757A741865D1B800881F70 /* miniForth.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = miniForth.1; sourceTree = "<group>"; };
+		C4757A7B18660B0E00881F70 /* stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
+		C4757A7C18660B5800881F70 /* stack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stack.c; sourceTree = "<group>"; };
+		C4757A7E18660C3A00881F70 /* word.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = word.h; sourceTree = "<group>"; };
+		C4757A7F18660C4400881F70 /* word.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = word.c; sourceTree = "<group>"; };
+		C4757A8118660CFD00881F70 /* token.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = token.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +68,12 @@
 			isa = PBXGroup;
 			children = (
 				C4757A721865D1B800881F70 /* main.c */,
+				C4757A8118660CFD00881F70 /* token.h */,
 				C4757A741865D1B800881F70 /* miniForth.1 */,
+				C4757A7B18660B0E00881F70 /* stack.h */,
+				C4757A7C18660B5800881F70 /* stack.c */,
+				C4757A7E18660C3A00881F70 /* word.h */,
+				C4757A7F18660C4400881F70 /* word.c */,
 			);
 			path = miniForth;
 			sourceTree = "<group>";
@@ -117,7 +129,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4757A831866172400881F70 /* stack.c in Sources */,
 				C4757A731865D1B800881F70 /* main.c in Sources */,
+				C4757A821866172100881F70 /* word.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +209,7 @@
 		C4757A791865D1B800881F70 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_CFLAGS = "-Iuthash/src";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -202,6 +217,7 @@
 		C4757A7A1865D1B800881F70 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_CFLAGS = "-Iuthash/src";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -225,6 +241,7 @@
 				C4757A7A1865D1B800881F70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
